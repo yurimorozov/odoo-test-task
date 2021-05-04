@@ -8,9 +8,6 @@
                     <group>
                         <field name="name"/>
                     </group>
-                    <group>
-                        <field name="phone_model_ids"/>
-                    </group>
                 </form>
             </field>
         </record>
@@ -55,6 +52,7 @@
             <field name="model">mobile.phone.model</field>
             <field name="arch" type="xml">
                 <tree string="Models of mobile phones">
+                    <field name="manufacturer_id"/>
                     <field name="name"/>
                 </tree>
             </field>

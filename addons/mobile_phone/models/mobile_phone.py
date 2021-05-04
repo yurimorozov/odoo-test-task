@@ -8,7 +8,7 @@ class Manufacturer(models.Model):
 
     name = fields.Char(string="Name", required=True)
 
-    phone_model_ids = fields.One2many('mobile.phone.model', 'manufacturer_id', string="Models")
+    phone_model_ids = fields.One2many('mobile.phone.model', 'manufacturer_id', string="Models", readonly=True)
 
 
 class PhoneModel(models.Model):
