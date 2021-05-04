@@ -15,16 +15,16 @@ class MobileWizard(models.TransientModel):
     name = fields.Char('Product Name', compute='_compute_name')
     type = fields.Selection([('consu', 'Consumable'),
                              ('service', 'Service')], string='Product Type', default='consu')
-
     categ_id = fields.Many2one('product.category', 'Product Category', default=_get_default_category_id)
     sale_ok = fields.Boolean('Can be Sold', default=True)
     purchase_ok = fields.Boolean('Can be Purchased', default=True)
     default_code = fields.Char('Internal Reference')
-
     manufacturer_id = fields.Many2one('mobile.phone.manufacturer', ondelete='set null', string="Manufacturer")
     model_id = fields.Many2one('mobile.phone.model', ondelete='set null', string="Model",
                                domain="[('manufacturer_id', '=', manufacturer_id)]")
     image_1920 = fields.Image("Image", max_width=1920, max_height=1920)
+    state = fields.Selection(selection=[('step1', 'Step 1'),
+                                        ('step2', 'Step 2')], default="step1", readonly=True)
 
     @api.onchange('manufacturer_id')
     def _verify_model(self):
@@ -40,9 +40,6 @@ class MobileWizard(models.TransientModel):
 
         if self.model_id:
             self.name += ' ' + self.model_id.name
-
-    state = fields.Selection(selection=[('step1', 'Step 1'),
-                                        ('step2', 'Step 2')], default="step1", readonly=True)
 
     def action_step1(self):
         self.state = 'step1'
