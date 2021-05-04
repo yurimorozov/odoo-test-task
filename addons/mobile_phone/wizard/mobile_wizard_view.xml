@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+        <record model="ir.ui.view" id="wizard_product_template">
+            <field name="name">mobile_phone_wizard.form</field>
+            <field name="model">mobile.phone.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Quick Create Product">
+                    <header states="step1">
+                        <button name="action_step2" string="Next" type="object" class="btn-primary"/>
+                    </header>
+
+                    <header states="step2">
+                        <button name="action_step1" string="Previous" type="object"/>
+                    </header>
+
+                    <field invisible="1" name="state"/>
+
+                    <h1 states="step1">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </h1>
+
+                    <div name="options" groups="base.group_user" states="step1">
+                        <div>
+                            <field name="sale_ok"/>
+                            <label for="sale_ok"/>
+                        </div>
+                        <div>
+                            <field name="purchase_ok"/>
+                            <label for="purchase_ok"/>
+                        </div>
+                    </div>
+
+                    <group states="step1">
+                        <field name="type"/>
+                        <field name="categ_id"/>
+                        <field name="default_code"/>
+                        <field name="manufacturer_id"/>
+                        <field name="model_id"/>
+                    </group>
+
+                    <field states="step2" name="image_1920" widget='image'/>
+
+                    <footer states="step2">
+                        <button name="save_product" string="Save" type="object" class="btn-primary"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="wizard_product_template_act_window" >
+            <field name="name">Quick Create Product</field>
+            <field name="res_model">mobile.phone.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

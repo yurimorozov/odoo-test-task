@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <record model="ir.ui.view" id="manufacturer_form_view">
+            <field name="name">mobile.phone.manufacturer.form</field>
+            <field name="model">mobile.phone.manufacturer</field>
+            <field name="arch" type="xml">
+                <form string="Mobile phone Manufacturer">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="phone_model_ids"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="manufacturer_list_view">
+            <field name="name">mobile.phone.manufacturer.list</field>
+            <field name="model">mobile.phone.manufacturer</field>
+            <field name="arch" type="xml">
+                <tree string="Manufacturer list">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="manufacturer_list_action">
+            <field name="name">Manufacturers</field>
+            <field name="res_model">mobile.phone.manufacturer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="manufacturer_list_action_menu" name="Manufacturers"
+                  parent="sale.menu_sale_config"
+                  action="manufacturer_list_action"/>
+
+        <record model="ir.ui.view" id="model_form_view">
+            <field name="name">mobile.phone.model.form</field>
+            <field name="model">mobile.phone.model</field>
+            <field name="arch" type="xml">
+                <form string="Model of mobile phone">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="manufacturer_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="model_list_view">
+            <field name="name">mobile.phone.model.list</field>
+            <field name="model">mobile.phone.model</field>
+            <field name="arch" type="xml">
+                <tree string="Models of mobile phones">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="models_list_action">
+            <field name="name">Models</field>
+            <field name="res_model">mobile.phone.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="models_list_action_menu" name="Models"
+                  parent="sale.menu_sale_config"
+                  action="models_list_action"/>
+
+        <menuitem id="wizard_product_template_act_window_menu" name="Quick Create Product"
+                  parent="sale.product_menu_catalog"
+                  action="wizard_product_template_act_window"/>
+</odoo>

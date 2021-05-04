@@ -1,0 +1,8 @@
+<odoo>
+
+        <record id="mobile_phone_manager" model="res.groups">
+            <field name="name">Mobile phone / Manager</field>
+        </record>
+
+
+</odoo>

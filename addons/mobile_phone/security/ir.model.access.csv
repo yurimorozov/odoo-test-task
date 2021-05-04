@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mobile_phone_mobile_phone,mobile_phone.mobile_phone,model_mobile_phone_mobile_phone,base.group_user,1,1,1,1
+mobile_phone_manufacturer_manager,manufacturer manager,model_mobile_phone_manufacturer,mobile_phone_manager,1,1,1,1
+mobile_phone_model_manager,model manager,model_mobile_phone_model,mobile_phone_manager,1,1,1,1
+mobile_phone_model_manager_wizard,quick create prodact manager,model_mobile_phone_wizard,mobile_phone_manager,1,1,1,1
+mobile_phone_manufacturer_manager_all,manufacturer manager all,model_mobile_phone_manufacturer,,1,0,0,0
+mobile_phone_model_manager_all,model manager all,model_mobile_phone_model,,1,0,0,0

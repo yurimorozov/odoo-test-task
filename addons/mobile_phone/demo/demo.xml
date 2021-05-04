@@ -1,30 +1,38 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="mobile_phone.mobile_phone">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+        <record model="mobile.phone.manufacturer" id="1">
+            <field name="name">Nokia</field>
+        </record>
+        <record model="mobile.phone.manufacturer" id="2">
+            <field name="name">Samsung</field>
+        </record>
+        <record model="mobile.phone.manufacturer" id="3">
+            <field name="name">Xiaomi</field>
+        </record>
 
-          <record id="object1" model="mobile_phone.mobile_phone">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+        <record model="mobile.phone.model" id="1">
+            <field name="name">3310</field>
+            <field name="manufacturer_id">1</field>
+        </record>
 
-          <record id="object2" model="mobile_phone.mobile_phone">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+        <record model="mobile.phone.model" id="2">
+            <field name="name">6300</field>
+            <field name="manufacturer_id">1</field>
+        </record>
 
-          <record id="object3" model="mobile_phone.mobile_phone">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+        <record model="mobile.phone.model" id="3">
+            <field name="name">a53</field>
+            <field name="manufacturer_id">2</field>
+        </record>
 
-          <record id="object4" model="mobile_phone.mobile_phone">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
+        <record model="mobile.phone.model" id="4">
+            <field name="name">Galaxy</field>
+            <field name="manufacturer_id">2</field>
+        </record>
+
+        <record model="mobile.phone.model" id="5">
+            <field name="name">Redmi Note</field>
+            <field name="manufacturer_id">3</field>
+        </record>
     </data>
 </odoo>
