@@ -43,7 +43,9 @@
                         <field name="model_id"/>
                     </group>
 
-                    <field states="step2" name="image_1920" widget='image'/>
+                    <div class="text-center" states="step2">
+                        <field name="image_1920" widget='image' height="245"/>
+                    </div>
 
                     <footer states="step2">
                         <button name="save_product" string="Save" type="object" class="btn-primary"/>
